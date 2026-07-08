@@ -71,16 +71,43 @@ if st.button("Add task"):
         st.success(f"Added task: {task.title}")
 
 if st.session_state.current_pet is not None and st.session_state.current_pet.get_tasks():
-    st.write("Current tasks:")
+    scheduler = Scheduler()
+    sorted_tasks = scheduler.sort_by_time(st.session_state.current_pet.get_tasks())
+    filtered_tasks = scheduler.filter_tasks(sorted_tasks, pet_name="feed")
+
+    st.success(f"{len(sorted_tasks)} task(s) loaded for {st.session_state.current_pet.name}.")
+    st.caption("Tasks are sorted by time and grouped for review.")
+
+    st.subheader("Scheduled Tasks")
     task_rows = [
         {
             "title": task.title,
+            "time": task.time,
             "duration_minutes": task.duration_minutes,
             "priority": task.priority.value,
         }
-        for task in st.session_state.current_pet.get_tasks()
+        for task in sorted_tasks
     ]
     st.table(task_rows)
+
+    if filtered_tasks:
+        st.subheader("Feeding Focus")
+        st.table(
+            [
+                {
+                    "title": task.title,
+                    "time": task.time,
+                    "priority": task.priority.value,
+                }
+                for task in filtered_tasks
+            ]
+        )
+    else:
+        st.info("No feeding-related tasks to display.")
+
+    conflict_warning = scheduler.detect_conflicts(sorted_tasks)
+    if conflict_warning:
+        st.warning(conflict_warning)
 else:
     st.info("No tasks yet. Add one above.")
 

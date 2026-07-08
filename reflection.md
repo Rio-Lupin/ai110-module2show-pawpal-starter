@@ -25,6 +25,8 @@ There is a schedule class will have the time blocks add tasks  while the schedul
 - Did your design change during implementation?
 - If yes, describe at least one change and why you made it.
 
+Yes, the design did change during implementation. one change was making the scheduler more explicit and detecting conflicts between over lapping time. This was done because it would make the design and =behavior of the app more realist to a person's physical time availablity.. 
+
 ---
 
 ## 2. Scheduling Logic and Tradeoffs
@@ -33,6 +35,8 @@ There is a schedule class will have the time blocks add tasks  while the schedul
 
 - What constraints does your scheduler consider (for example: time, priority, preferences)?
 - How did you decide which constraints mattered most?
+
+the scheduler considers time, task priority and task duration. it also considers overlaps and avoiding scheduling conflicts. these constraints mattered the most because in order to create a simple daily schedule knowing the daily time what is the priority for these tasks and whether there were confilicts that day you would need all this information. If you were creating a schedule for a calender year you might include blocked off times, maybe a daily non-neggociable task priority for certain tasks and a way to be flexable with other tasks on a weekly basis. 
 
 **b. Tradeoffs**
 
@@ -48,11 +52,14 @@ There is a schedule class will have the time blocks add tasks  while the schedul
 - How did you use AI tools during this project (for example: design brainstorming, debugging, refactoring)?
 - What kinds of prompts or questions were most helpful?
 
+I used AI tools for design brainstoming and skeleton coding. the kind of propts i found helpful were ones that were explicit to the AI on what tasks i wanted it to complete so it would not assume that i wanted it to complete tasks. I also found it helpful to ask where certain logic was located when i lost track of it.  
+
 **b. Judgment and verification**
 
 - Describe one moment where you did not accept an AI suggestion as-is.
 - How did you evaluate or verify what the AI suggested?
 
+One moment when i did not accept the AI suggestion as is is when i was developing main py. It wished to complicate the data being entered by adding multiple species when i just wished to just keep it at 1 species with the possiblity of others. If i had added other species i may have specified tasks for those specific species and that would complicate he program more.
 ---
 
 ## 4. Testing and Verification
@@ -62,10 +69,16 @@ There is a schedule class will have the time blocks add tasks  while the schedul
 - What behaviors did you test?
 - Why were these tests important?
 
+Behaviors i tested were  sorting tasks, ordering tasks by clock time, filtering tasks by completion and detecting conflicts. These tests were important to verify if the features in scheduler were useful, to organize tasks clearly an to avoid scheduling conflicts.
+
 **b. Confidence**
 
 - How confident are you that your scheduler works correctly?
 - What edge cases would you test next if you had more time?
+
+I am confident that my schedule works correctly (4 out of 5). i test the out put and the py.test does come sucessful. i think to feel more confident i would need to review the code slowly and consider other cases that might brake the program.
+
+Some edge cases would be if there are different tasks that start at the same time, tasks that pass the availablity of the owner, different tasks that have the same priority and confirming that schedulers handles conflicts predictably.
 
 ---
 
@@ -75,10 +88,16 @@ There is a schedule class will have the time blocks add tasks  while the schedul
 
 - What part of this project are you most satisfied with?
 
+this the part of the project i was most satisfied with was that i was able to follow along with the UML in the begining of the project. i think this was the most pivtol task to do so that i would be able to implement the program and follow the suggestions made by the Ai and understand what what being suggested.
+
 **b. What you would improve**
 
 - If you had another iteration, what would you improve or redesign?
 
+If i had to do another itteration of this project i would probably make it a bit more complicated by making specific tasks corrospond with specific species of pets ad having more time differences between these different species tasks to see how time cobnflict/ scheduling would be resolved in this case.
+
 **c. Key takeaway**
 
 - What is one important thing you learned about designing systems or working with AI on this project?
+
+One this i learned while designing systems is the connecting of UI and backend intergation. This is one of the skills i have been really wishing to learn since it has not been taught to me in my Schooling yet. And iit is something i wish to continue practicing for my goal as a full stack developer. As for working with AI, i have learned to be more explicit in my propts though i still need to practice because some times i give vague propts.

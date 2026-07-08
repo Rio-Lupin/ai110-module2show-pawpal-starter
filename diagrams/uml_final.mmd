@@ -1,0 +1,80 @@
+classDiagram
+    class Owner {
+        +name: str
+        +available_start: str
+        +available_end: str
+        +preferences: list[str]
+        +pets: list[Pet]
+        +add_pet(pet: Pet)
+        +update_preferences(preferences: list[str])
+    }
+
+    class Pet {
+        +name: str
+        +species: str
+        +age: int
+        +notes: str
+        +tasks: list[Task]
+        +add_task(task: Task)
+        +get_tasks() list[Task]
+    }
+
+    class Task {
+        +title: str
+        +category: str
+        +duration_minutes: int
+        +priority: Priority
+        +is_recurring: bool
+        +is_complete: bool
+        +time: str
+        +recurrence: str?
+        +date: str?
+        +get_priority_score() int
+        +mark_complete(pet: Pet) Task?
+        +_next_occurrence_date() str
+    }
+
+    class Priority {
+        <<enumeration>>
+        low
+        medium
+        high
+    }
+
+    class TimeBlock {
+        +start_time: str
+        +end_time: str
+        +task: Task
+        +is_available() bool
+    }
+
+    class Schedule {
+        +date: str
+        +time_blocks: list[TimeBlock]
+        +add_task(task: Task, start_time: str)
+        +summarize() str
+    }
+
+    class Scheduler {
+        +build_daily_plan(owner: Owner, pet: Pet, tasks: list[Task]) Schedule
+        +sort_tasks(tasks: list[Task]) list[Task]
+        +sort_by_time(tasks: list[Task]) list[Task]
+        +filter_by_time(tasks: list[Task], available_minutes: int) list[Task]
+        +filter_tasks(tasks: list[Task], completed: bool?, pet_name: str?) list[Task]
+        +detect_conflicts(tasks: list[Task]) str?
+        +resolve_conflicts(schedule: Schedule) Schedule
+    }
+
+    Owner "1" --> "1..*" Pet : owns
+    Pet "1" --> "0..*" Task : needs
+    Task --> Priority : has
+    Schedule "1" --> "1..*" TimeBlock : contains
+    Scheduler ..> Owner : uses
+    Scheduler ..> Pet : uses
+    Scheduler ..> Task : sorts/filters/conflicts
+    Scheduler ..> Schedule : creates/updates
+
+    note for Owner "Stores owner details, availability, preferences, and pets"
+    note for Pet "Represents the pet and the care tasks associated with it"
+    note for Task "Represents one care activity with duration, priority, status, and recurrence"
+    note for Scheduler "Orders and evaluates tasks into a daily plan while detecting conflicts"
