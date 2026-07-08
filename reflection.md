@@ -7,6 +7,8 @@
 - Briefly describe your initial UML design.
 - What classes did you include, and what responsibilities did you assign to each?
 
+UML will have  class owner with the responisbility of inputing schedule and adding/editing priority of pet tasks (walk, feed, bath)  under this class will be the pet class where the pet will be entered (ie name, breed and time takes for each task) Under this should be the task class where the responisiblitiies would be scheduling pet tasks based on owner class schedule/priority.
+
 **b. Design changes**
 
 - Did your design change during implementation?

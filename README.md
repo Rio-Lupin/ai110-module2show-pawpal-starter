@@ -35,6 +35,7 @@ pip install -r requirements.txt
 ### Suggested workflow
 
 1. Read the scenario carefully and identify requirements and edge cases.
+        core actions: -add owner, add owner schedule, add pet task prority, add pet, schedule pet tasks, edit pet task priority
 2. Draft a UML diagram (classes, attributes, methods, relationships).
 3. Convert UML into Python class stubs (no logic yet).
 4. Implement scheduling logic in small increments.
