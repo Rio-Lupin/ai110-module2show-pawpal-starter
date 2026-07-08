@@ -22,6 +22,7 @@ class Task:
     is_complete: bool = False
     time: str = "08:00"
     recurrence: Optional[str] = None
+    date: Optional[str] = None
 
     def get_priority_score(self) -> int:
         """Return a numeric score for sorting tasks by priority."""
@@ -36,6 +37,7 @@ class Task:
         """Mark the task as completed and create the next occurrence when it recurs."""
         self.is_complete = True
         if self.is_recurring and self.recurrence in {"daily", "weekly"} and pet is not None:
+            next_date = self._next_occurrence_date()
             next_task = Task(
                 title=self.title,
                 category=self.category,
@@ -44,10 +46,17 @@ class Task:
                 is_recurring=True,
                 recurrence=self.recurrence,
                 time=self.time,
+                date=next_date,
             )
             pet.add_task(next_task)
             return next_task
         return None
+
+    def _next_occurrence_date(self) -> str:
+        """Return the next occurrence date for this recurring task."""
+        current_date = datetime.strptime(self.date, "%Y-%m-%d") if self.date else datetime.now()
+        step = 1 if self.recurrence == "daily" else 7
+        return (current_date + timedelta(days=step)).strftime("%Y-%m-%d")
 
 
 @dataclass
@@ -184,6 +193,7 @@ class Scheduler:
             if block.start_time < previous.end_time:
                 continue
             resolved_blocks.append(block)
+
 
         schedule.time_blocks = resolved_blocks
         return schedule

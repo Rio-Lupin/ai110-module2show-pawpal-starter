@@ -1,3 +1,5 @@
+from datetime import date, timedelta
+
 from pawpal_system import Owner, Pet, Priority, Scheduler, Task
 
 
@@ -80,6 +82,7 @@ def test_mark_complete_creates_next_occurrence_for_recurring_task():
     assert new_task is not None
     assert new_task.is_complete is False
     assert new_task.recurrence == "daily"
+    assert new_task.date == (date.today() + timedelta(days=1)).strftime("%Y-%m-%d")
     assert len(pet.get_tasks()) == 2
 
 
@@ -88,6 +91,19 @@ def test_detect_conflicts_returns_warning_message_for_overlapping_tasks():
     tasks = [
         Task("Walk", "exercise", 30, Priority.HIGH, time="08:00"),
         Task("Feed", "feeding", 20, Priority.MEDIUM, time="08:15"),
+    ]
+
+    warning = scheduler.detect_conflicts(tasks)
+
+    assert warning is not None
+    assert "overlap" in warning.lower()
+
+
+def test_detect_conflicts_flags_duplicate_times():
+    scheduler = Scheduler()
+    tasks = [
+        Task("Walk", "exercise", 30, Priority.HIGH, time="08:00"),
+        Task("Feed", "feeding", 20, Priority.MEDIUM, time="08:00"),
     ]
 
     warning = scheduler.detect_conflicts(tasks)

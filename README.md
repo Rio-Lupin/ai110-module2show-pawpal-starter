@@ -76,19 +76,24 @@ Paste a sample of your app's CLI or Streamlit output here so a reader can see wh
 
 ## 🧪 Testing PawPal+
 
+Run the test suite with:
+
 ```bash
-# Run the full test suite:
-pytest
-
-# Run with coverage:
-pytest --cov
+python -m pytest
 ```
 
-Sample test output:
+These tests cover the core scheduling behaviors for PawPal+, including sorting tasks in chronological order, creating the next occurrence for recurring daily tasks, and detecting conflicts when two tasks share the same time. My confidenc level is about a 3.5 stars because so far the tests are like below and the 77% has me worried.
 
-```
-# Paste your pytest output here
-```
+=================================== test session starts ====================================
+platform win32 -- Python 3.14.4, pytest-9.1.1, pluggy-1.6.0
+rootdir: C:\Users\carle\AI110\ai110-module2show-pawpal-starter
+plugins: anyio-4.14.1
+collected 9 items                                                                           
+
+tests\test_pawpal_system.py .......                                                   [ 77%]
+tests\tests\test_pawpal.py ..                                                         [100%]
+
+==================================== 9 passed in 0.06s =====================================
 
 ## 📐 Smarter Scheduling
 
