@@ -6,8 +6,19 @@
 
 - Briefly describe your initial UML design.
 - What classes did you include, and what responsibilities did you assign to each?
-
+MY Initial design:
 UML will have  class owner with the responisbility of inputing schedule and adding/editing priority of pet tasks (walk, feed, bath)  under this class will be the pet class where the pet will be entered (ie name, breed and time takes for each task) Under this should be the task class where the responisiblitiies would be scheduling pet tasks based on owner class schedule/priority.
+
+Afterwards i changed it to:
+
+UML has  an owner class that will have their name, add availablity, add/edit preferences  and have the ablity to add a pet.
+The Pet class will have the pet name, species,age and have the ablity to add a task or get the list of tasks.
+
+The task class will have the title, category duration of the task, ppriority, whether it is reoccuring  and will get the priority score from the class priority.
+
+There is a Time block class which will check the sart/end time, the task and if time is available
+
+There is a schedule class will have the time blocks add tasks  while the scheduler class will build the daily plan, sort the tasks filter by the time and resolve conflicts
 
 **b. Design changes**
 
@@ -25,8 +36,8 @@ UML will have  class owner with the responisbility of inputing schedule and addi
 
 **b. Tradeoffs**
 
-- Describe one tradeoff your scheduler makes.
-- Why is that tradeoff reasonable for this scenario?
+- One tradeoff my scheduler makes is that it currently checks for simple time overlaps using the start time of each task and its duration, rather than fully modeling every possible overlap pattern across multiple tasks and pets.
+- - i decieded the constraints based on the fact that this program is meant to be a simple program creating a daily schedule rater than a full calender year schedule. this makes the program easier to follow, plan implement and test.
 
 ---
 

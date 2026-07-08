@@ -47,13 +47,32 @@ pip install -r requirements.txt
 
 Paste a sample of your app's CLI or Streamlit output here so a reader can see what a generated plan looks like:
 
-```
-# e.g.:
-# Daily plan for Biscuit (Golden Retriever):
-#   08:00 — Morning walk (30 min) [priority: high]
-#   09:00 — Feeding (10 min) [priority: high]
-#   ...
-```
+=============================================
+ TODAY'S SCHEDULE FOR CARLENE'S PETS 
+=============================================
+
+🐾 Rio (Dog):
+  ⏰ 08:00 - 08:15 | [HIGH] Feed Breakfast
+  ⏰ 08:15 - 08:30 | [HIGH] Feed Dinner
+  ⏰ 08:30 - 09:15 | [MEDIUM] Afternoon Walk
+  ⏰ 09:15 - 09:35 | [MEDIUM] Play Time
+  ⏰ 09:35 - 10:00 | [LOW] Bath Time
+
+🐾 Lupin (Dog):
+  ⏰ 08:00 - 08:15 | [HIGH] Feed Breakfast
+  ⏰ 08:15 - 08:30 | [HIGH] Feed Dinner
+  ⏰ 08:30 - 09:15 | [MEDIUM] Afternoon Walk
+  ⏰ 09:15 - 09:35 | [MEDIUM] Play Time
+  ⏰ 09:35 - 10:00 | [LOW] Bath Time
+
+🐾 Coco (Dog):
+  ⏰ 08:00 - 08:15 | [HIGH] Feed Breakfast
+  ⏰ 08:15 - 08:30 | [HIGH] Feed Dinner
+  ⏰ 08:30 - 08:40 | [HIGH] Give Medicine
+  ⏰ 08:40 - 09:00 | [MEDIUM] Play Time
+  ⏰ 09:00 - 09:25 | [LOW] Bath Time
+
+=============================================
 
 ## 🧪 Testing PawPal+
 
@@ -73,14 +92,12 @@ Sample test output:
 
 ## 📐 Smarter Scheduling
 
-> Fill in once you've implemented scheduling logic.
+The scheduler now uses a small set of methods to turn a pet's task list into a practical daily plan.
 
-| Feature | Method(s) | Notes |
-|---------|-----------|-------|
-| Task sorting | | e.g., by priority, duration |
-| Filtering | | e.g., skip tasks if time runs out |
-| Conflict handling | | e.g., overlapping time slots |
-| Recurring tasks | | e.g., daily vs. weekly |
+- Sorting behavior: `Scheduler.sort_tasks()` orders tasks by priority, then duration, and `Scheduler.sort_by_time()` orders them by clock time so the plan can be reviewed chronologically.
+- Filtering behavior: `Scheduler.filter_tasks()` can narrow tasks by completion status or by matching a pet name or category keyword, which helps the owner focus on the right tasks.
+- Conflict detection logic: `Scheduler.detect_conflicts()` compares tasks in time order and returns a warning when one task would overlap another.
+- Recurring task logic: `Task.mark_complete()` marks a task complete and, when the task is marked recurring with a daily or weekly recurrence, creates the next occurrence for the pet.
 
 ## 📸 Demo Walkthrough
 
