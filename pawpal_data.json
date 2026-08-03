@@ -1,0 +1,319 @@
+{
+  "owner": {
+    "name": "Jordan",
+    "available_start": "08:00",
+    "available_end": "16:00",
+    "preferences": [],
+    "pets": [
+      {
+        "name": "rio",
+        "species": "dog",
+        "age": 0,
+        "notes": "",
+        "tasks": [
+          {
+            "title": "Morning Walk",
+            "category": "general",
+            "duration_minutes": 60,
+            "priority": "high",
+            "is_recurring": false,
+            "is_complete": false,
+            "time": "08:00",
+            "recurrence": null,
+            "date": null,
+            "last_completed_date": null
+          },
+          {
+            "title": "Afternoon Walk",
+            "category": "general",
+            "duration_minutes": 60,
+            "priority": "high",
+            "is_recurring": false,
+            "is_complete": false,
+            "time": "08:00",
+            "recurrence": null,
+            "date": null,
+            "last_completed_date": null
+          },
+          {
+            "title": "Breakfast",
+            "category": "general",
+            "duration_minutes": 10,
+            "priority": "high",
+            "is_recurring": false,
+            "is_complete": false,
+            "time": "08:00",
+            "recurrence": null,
+            "date": null,
+            "last_completed_date": null
+          },
+          {
+            "title": "Dinner",
+            "category": "general",
+            "duration_minutes": 10,
+            "priority": "high",
+            "is_recurring": false,
+            "is_complete": false,
+            "time": "08:00",
+            "recurrence": null,
+            "date": null,
+            "last_completed_date": null
+          },
+          {
+            "title": "Nail Trim",
+            "category": "general",
+            "duration_minutes": 20,
+            "priority": "low",
+            "is_recurring": false,
+            "is_complete": false,
+            "time": "08:00",
+            "recurrence": null,
+            "date": null,
+            "last_completed_date": null
+          },
+          {
+            "title": "Medicine",
+            "category": "general",
+            "duration_minutes": 10,
+            "priority": "high",
+            "is_recurring": false,
+            "is_complete": false,
+            "time": "08:00",
+            "recurrence": null,
+            "date": null,
+            "last_completed_date": null
+          }
+        ]
+      },
+      {
+        "name": "luna",
+        "species": "cat",
+        "age": 0,
+        "notes": "",
+        "tasks": [
+          {
+            "title": "Breakfast",
+            "category": "general",
+            "duration_minutes": 10,
+            "priority": "high",
+            "is_recurring": false,
+            "is_complete": false,
+            "time": "08:00",
+            "recurrence": null,
+            "date": null,
+            "last_completed_date": null
+          },
+          {
+            "title": "Dinner",
+            "category": "general",
+            "duration_minutes": 10,
+            "priority": "high",
+            "is_recurring": false,
+            "is_complete": false,
+            "time": "08:00",
+            "recurrence": null,
+            "date": null,
+            "last_completed_date": null
+          },
+          {
+            "title": "Play Time",
+            "category": "general",
+            "duration_minutes": 30,
+            "priority": "medium",
+            "is_recurring": false,
+            "is_complete": false,
+            "time": "08:00",
+            "recurrence": null,
+            "date": null,
+            "last_completed_date": null
+          },
+          {
+            "title": "Litter Change",
+            "category": "general",
+            "duration_minutes": 20,
+            "priority": "high",
+            "is_recurring": false,
+            "is_complete": false,
+            "time": "08:00",
+            "recurrence": null,
+            "date": null,
+            "last_completed_date": null
+          },
+          {
+            "title": "Bath",
+            "category": "general",
+            "duration_minutes": 45,
+            "priority": "low",
+            "is_recurring": false,
+            "is_complete": false,
+            "time": "08:00",
+            "recurrence": null,
+            "date": null,
+            "last_completed_date": null
+          }
+        ]
+      },
+      {
+        "name": "Rio",
+        "species": "dog",
+        "age": 0,
+        "notes": "",
+        "tasks": [
+          {
+            "title": "Morning Walk",
+            "category": "general",
+            "duration_minutes": 60,
+            "priority": "high",
+            "is_recurring": false,
+            "is_complete": false,
+            "time": "08:00",
+            "recurrence": null,
+            "date": null,
+            "last_completed_date": null
+          },
+          {
+            "title": "Breakfast",
+            "category": "general",
+            "duration_minutes": 10,
+            "priority": "high",
+            "is_recurring": false,
+            "is_complete": false,
+            "time": "08:00",
+            "recurrence": null,
+            "date": null,
+            "last_completed_date": null
+          },
+          {
+            "title": "Medicine",
+            "category": "general",
+            "duration_minutes": 5,
+            "priority": "high",
+            "is_recurring": false,
+            "is_complete": false,
+            "time": "08:00",
+            "recurrence": null,
+            "date": null,
+            "last_completed_date": null
+          },
+          {
+            "title": "Nail Trim",
+            "category": "general",
+            "duration_minutes": 60,
+            "priority": "low",
+            "is_recurring": false,
+            "is_complete": false,
+            "time": "08:00",
+            "recurrence": null,
+            "date": null,
+            "last_completed_date": null
+          },
+          {
+            "title": "Grooming",
+            "category": "general",
+            "duration_minutes": 30,
+            "priority": "medium",
+            "is_recurring": false,
+            "is_complete": false,
+            "time": "08:00",
+            "recurrence": null,
+            "date": null,
+            "last_completed_date": null
+          },
+          {
+            "title": "Dinner",
+            "category": "general",
+            "duration_minutes": 10,
+            "priority": "high",
+            "is_recurring": false,
+            "is_complete": false,
+            "time": "08:00",
+            "recurrence": null,
+            "date": null,
+            "last_completed_date": null
+          }
+        ]
+      },
+      {
+        "name": "Rio",
+        "species": "dog",
+        "age": 0,
+        "notes": "",
+        "tasks": []
+      },
+      {
+        "name": "Luna",
+        "species": "cat",
+        "age": 0,
+        "notes": "",
+        "tasks": [
+          {
+            "title": "Breakfast",
+            "category": "general",
+            "duration_minutes": 10,
+            "priority": "high",
+            "is_recurring": false,
+            "is_complete": false,
+            "time": "08:00",
+            "recurrence": null,
+            "date": null,
+            "last_completed_date": null
+          },
+          {
+            "title": "Grooming",
+            "category": "general",
+            "duration_minutes": 15,
+            "priority": "medium",
+            "is_recurring": false,
+            "is_complete": false,
+            "time": "08:00",
+            "recurrence": null,
+            "date": null,
+            "last_completed_date": null
+          },
+          {
+            "title": "Play Time",
+            "category": "general",
+            "duration_minutes": 30,
+            "priority": "medium",
+            "is_recurring": false,
+            "is_complete": false,
+            "time": "08:00",
+            "recurrence": null,
+            "date": null,
+            "last_completed_date": null
+          },
+          {
+            "title": "Dinner",
+            "category": "general",
+            "duration_minutes": 10,
+            "priority": "high",
+            "is_recurring": false,
+            "is_complete": false,
+            "time": "08:00",
+            "recurrence": null,
+            "date": null,
+            "last_completed_date": null
+          },
+          {
+            "title": "Clean Litter",
+            "category": "general",
+            "duration_minutes": 15,
+            "priority": "high",
+            "is_recurring": false,
+            "is_complete": false,
+            "time": "08:00",
+            "recurrence": null,
+            "date": null,
+            "last_completed_date": null
+          }
+        ]
+      }
+    ]
+  },
+  "history": {
+    "records": []
+  },
+  "metadata": {
+    "last_date": "2026-08-02"
+  }
+}

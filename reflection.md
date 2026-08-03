@@ -1,4 +1,26 @@
-# PawPal+ Project Reflection
+# PawPal+ Project 4: Reflection on AI Collaboration and System Design
+
+## 1. Student explains how they used AI during development (prompting, debugging, design).
+
+        I used AI during development by asking the Ai for a review of the code before i made the optimizations to remind me of the structure of the older project and to help me design the new optimizations. one thing that i also did use AI for was for debugging the streamlit connection when i added json storage. I was really helpful in figuring out what was wrong and what were my options to fix the problem.
+
+## 2. Student identifies at least one helpful and one flawed AI suggestion.
+        One helpful suggestion was helping me decide what Ai enhancements would be best for the type of program i was creating it allowed me to move on quickly to the next step. one flawed suggestion would have to be the code suggestions though they they worked and made the program function they were not user friendly. For example for entering tasks it asked the user to type each task for each pet. i had to specifically give it a list of specific tasks to make into a drop down. In addition, though the base code it gave me did create a schedule it did things like make the same task for two different pets at a different time so i had to specifically tell it that if the task, time it takes and priority are the same for 2 pets just schedule them together. 
+
+## 3. Student reflects on system limitations and future improvements.
+
+- The current system can schedule tasks for multiple pets and detect overlaps, but it is still fairly simple. It saves task and owner data in the JSON file, so plans can be reused after the app restarts.
+- The planner uses a rule-based approach and groups similar tasks together rather than using a full optimization engine. Because of this, it may miss more complex tradeoffs such as task dependencies, transition time between activities, or partial overlaps between different task types.
+- The UI allows users to enter pet tasks manually, but it still lacks edit and delete controls and only has basic validation for times, durations, and owner availability.
+
+Future improvements:
+- I have to improve the history file that saves the data because it is saving the data what is happening is the tasks from the past are also being shown. (I dont have time to fix this bug)
+- Add task editing, deletion, and stronger input validation in the Streamlit interface.
+- Improve the scheduling logic with blocked time ranges, task dependencies, transition time between tasks, and better multi-pet conflict resolution.
+- Provide clearer planning explanations so users can understand why a task was grouped or scheduled at a specific time.
+
+__________________________________________________________________________________________
+# PawPal+ Project Reflection (Unoptimized version)
 
 ## 1. System Design
 
